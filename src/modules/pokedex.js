@@ -8,7 +8,7 @@ class Pokedex {
         this.version = version;
     }
 
-    async getPokemonDescriptionByName(name) {
+    getPokemonDescriptionByName(name) {
         let lan = this.language;
         let ver = this.version;
         return this.pokedex.getPokemonSpeciesByName(name)

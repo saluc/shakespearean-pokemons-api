@@ -9,7 +9,8 @@ const HOST = '0.0.0.0';
 const app = express();
 
 app.get('/pokemon/:name', (req, res) => {
-  pokemon.getPokemonDescription(req, res); 
+  pokemon.getPokemonDescription(req, res)
+  .then((resp) => res.status(resp.status).json(resp.json)); 
 });
 
 app.listen(PORT, HOST);

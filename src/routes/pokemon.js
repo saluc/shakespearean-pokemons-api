@@ -1,30 +1,27 @@
 const Pokedex = require("../modules/pokedex.js");
-const pokedex = new Pokedex();
+const ShakeTransl = require("../modules/shakespeareanTranslator.js");
+const p = new Pokedex();
+const st = new ShakeTransl();
 
 function getPokemonDescription(req, res) {
-    return pokedex.getPokemonDescriptionByName(req.params && req.params.name)
+    return p.getPokemonDescriptionByName(req.params && req.params.name)
         .then((resp) => {
-            if (resp) {
-                console.log(`Pokemon with name '${req.params.name}' found! Its description is: '${resp}'`);
-                res.status(200).json(
-                    {
-                        name: req.params.name,
-                        description: resp
-                    }
-                );
-            }
-            else {
-                res.status(404).json({ error: `The pokèmon you searched was not found` })
-            }
-            
+            console.log(`Pokemon with name '${req.params.name}' found! Its description is: '${resp}'`);
+            return resp;
+        })
+        .then((desc) => {
+            return st.translate(desc).then((translDesc) => {
+                console.log(`Pokemon description translated to Shakespearean! The translation is: '${translDesc}'`);
+                return ({ status: 200, json: { name: req.params.name, description: translDesc } });
+            });
         })
         .catch((err) => {
             console.error(`Error: ${err.message}`);
             if (err.message == "Request failed with status code 404") {
-                res.status(404).json({ error: err.message });
+                return ({ status: 404, json: { error: err.message } });
             }
             else {
-                res.status(500).json({ error: err.message });
+                return ({ status: 500, json: { error: err.message } });
             }
         });
 }

@@ -1,0 +1,14 @@
+{
+  "name": "shakespearean_pokemon_api",
+  "version": "1.0.0",
+  "description": "Implementation of Shakespearean Pokèmon API using Node.js on Docker",
+  "author": "Luca Salucci <salucci68@gmail.com>",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.16.1",
+    "pokedex-promise-v2": "^3.2.0"
+  }
+}

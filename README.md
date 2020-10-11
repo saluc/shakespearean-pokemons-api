@@ -13,7 +13,7 @@ This project implements a REST API that allows to obtain Pokemon's descriptions 
 
 3. Clone this repository:
     ```
-    git clone https://github.com/saluc/shakespearean-pokemons-api.git`
+    git clone https://github.com/saluc/shakespearean-pokemons-api.git
     ```
 
 [node]: https://nodejs.org/

@@ -12,30 +12,42 @@ This project implements a REST API that allows to obtain Pokemon's descriptions 
 2. **[Recommended]** Install [Node.js version 10 or greater][node]
 
 3. Clone this repository:
-    `git clone https://github.com/saluc/shakespearean-pokemons-api.git`
+    ```
+    git clone https://github.com/saluc/shakespearean-pokemons-api.git`
+    ```
 
 [node]: https://nodejs.org/
 
 ### Build
 Go into the root folder of the repository:
-`cd shakespearean-pokemons-api`
+```
+cd shakespearean-pokemons-api
+```
 
 If you installed Node.js you can build the Docker image by executing:
-`npm start`
+```
+npm start
+```
 
 Otherwise, you can build and run the container by following these steps:
-`docker build -t shaks_pkm_api/node-web-app .`
-`docker run -p 49160:8080 -d shaks_pkm_api/node-web-app`
+```
+docker build -t shaks_pkm_api/node-web-app .
+docker run -p 49160:8080 -d shaks_pkm_api/node-web-app
+```
 
 ### Usage
 
 Once the container is up and running you can starting querying for Shakespearean's Pokemons descriptions.
 By default the server will be listening on port 49160. You can test the API with the following command:
-`curl --location --request GET 'http://0.0.0.0:49160/pokemon/pikachu'`
+```
+curl --location --request GET 'http://0.0.0.0:49160/pokemon/pikachu'
+```
 
 ### Test
 The repository includes some tests. If you installed Node.js you can run them using:
-`npm test`
+```
+npm test
+```
 
 ## Built With
 

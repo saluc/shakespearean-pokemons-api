@@ -13,7 +13,7 @@ This project implements a REST API that allows to obtain Pokemon's descriptions 
 
 3. Clone this repository:
     ```
-    git clone https://github.com/saluc/shakespearean-pokemons-api.git`
+    git clone https://github.com/saluc/shakespearean-pokemons-api.git
     ```
 
 [node]: https://nodejs.org/
@@ -47,6 +47,18 @@ curl --location --request GET 'http://0.0.0.0:49160/pokemon/pikachu'
 The repository includes some tests. If you installed Node.js you can run them using:
 ```
 npm test
+```
+
+### Stop
+If you installed Node.js you can stop the container by executing:
+```
+npm stop
+```
+
+Otherwise, use the following commands:
+```
+docker container stop $(docker ps -a -q --filter 'ancestor=shaks_pkm_api/node-web-app')
+docker container rm $(docker ps -a -q --filter 'ancestor=shaks_pkm_api/node-web-app')
 ```
 
 ## Built With

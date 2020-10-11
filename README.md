@@ -64,4 +64,5 @@ docker container rm $(docker ps -a -q --filter 'ancestor=shaks_pkm_api/node-web-
 ## Built With
 
 * Node.js v10.19.0
+* NPM 6.14.4
 * Docker 19.03.11

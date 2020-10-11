@@ -49,6 +49,18 @@ The repository includes some tests. If you installed Node.js you can run them us
 npm test
 ```
 
+### Stop
+If you installed Node.js you can stop the container by executing:
+```
+npm stop
+```
+
+Otherwise, use the following commands:
+```
+docker container stop $(docker ps -a -q --filter 'ancestor=shaks_pkm_api/node-web-app')
+docker container rm $(docker ps -a -q --filter 'ancestor=shaks_pkm_api/node-web-app')
+```
+
 ## Built With
 
 * Node.js v10.19.0

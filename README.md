@@ -9,7 +9,7 @@ This project implements a REST API that allows to obtain Pokemon's descriptions 
 * [OS X](https://docs.docker.com/mac/started/)
 * [Linux](https://docs.docker.com/linux/started/)
 
-2. **[Recommended]** Install [Node.js version 10 or greater][node]
+2. **[Recommended]** Install [Node.js and NPM Package Manager version 10 or greater][node]
 
 3. Clone this repository:
     ```

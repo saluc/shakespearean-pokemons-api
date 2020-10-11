@@ -5,7 +5,8 @@
   "author": "Luca Salucci <salucci68@gmail.com>",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "test": "mocha --timeout 5000 --exit './src/test/*.test.js'",
+    "start": "docker build -t shaks_pkm_api/node-web-app . && docker run -p 49160:8080 -d shaks_pkm_api/node-web-app"
   },
   "dependencies": {
     "axios": "^0.20.0",
@@ -13,5 +14,11 @@
     "memory-cache": "^0.2.0",
     "pokedex-promise-v2": "^3.2.0",
     "qs": "^6.9.4"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
+    "chai-http": "^4.3.0",
+    "mocha": "^8.1.3"
   }
 }

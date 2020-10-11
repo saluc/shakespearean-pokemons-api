@@ -10,13 +10,13 @@ const memCache = new cache.Cache();
 function getPokemonDescription(req, res) {
     let cacheContent = memCache.get(req.params.name);
     if (cacheContent) {
-        console.log(`Cache hit, found cached description for ${req.params.name}`);
+        console.log(`Cache hit, found cached description for '${req.params.name}'`);
         return Promise.resolve().then(() => {
             return { status: 200, json: { name: req.params.name, description: cacheContent } }
         });
     }
     else {
-        console.log(`Cache miss, requesting description for ${req.params.name}`);       
+        console.log(`Cache miss, requesting description for '${req.params.name}'`);       
         return p.getPokemonDescriptionByName(req.params && req.params.name)
             .then((resp) => {
                 console.log(`Pokemon with name '${req.params.name}' found! Its description is: '${resp}'`);

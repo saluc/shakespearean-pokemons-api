@@ -13,5 +13,12 @@ app.get('/pokemon/:name', (req, res) => {
   .then((resp) => res.status(resp.status).json(resp.json)); 
 });
 
-app.listen(PORT, HOST);
+let server = app.listen(PORT, HOST);
 console.log(`Running on http://${HOST}:${PORT}`);
+
+function stop() {
+  server.close();
+}
+
+module.exports = app;
+module.exports.stop = stop;

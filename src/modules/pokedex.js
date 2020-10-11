@@ -1,4 +1,5 @@
 var _Pokedex = require('pokedex-promise-v2');
+const logger = require("./logging.js");
 
 class Pokedex {
 
@@ -17,7 +18,7 @@ class Pokedex {
                 return desc && desc.flavor_text.replace(/(\r\n|\n|\f)/gm, " ");
             })
             .catch(function (error) {
-                console.error(`Pokedex error occurred: ${error}`);
+                logger.error(`Pokedex error occurred: ${error}`);
                 throw(error);
             });
     }

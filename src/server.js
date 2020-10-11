@@ -2,6 +2,7 @@
 
 const express = require('express');
 const pokemon = require("./routes/pokemon.js");
+const logger = require("./modules/logging.js");
 
 const PORT = 8080;
 const HOST = '0.0.0.0';
@@ -14,7 +15,7 @@ app.get('/pokemon/:name', (req, res) => {
 });
 
 let server = app.listen(PORT, HOST);
-console.log(`Running on http://${HOST}:${PORT}`);
+logger.info(`Running on http://${HOST}:${PORT}`);
 
 function stop() {
   server.close();

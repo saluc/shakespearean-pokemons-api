@@ -1,6 +1,6 @@
 var axios = require('axios');
 var qs = require('qs');
-
+const logger = require("./logging.js");
 
 class ShakespeareanTranslator {
 
@@ -29,7 +29,7 @@ class ShakespeareanTranslator {
                 }
             })
             .catch(function (error) {
-                console.error(`An error occurred during translation: ${error}`);
+                logger.error(`An error occurred during translation: ${error}`);
                 throw (error);
             });
     }

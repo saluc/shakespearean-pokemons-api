@@ -18,7 +18,6 @@ describe('Pokemon API', () => {
             return chai.request(app)
                     .get("/pokemon/pikachu")
                     .then(function (res) {
-                        console.log(`res = ${JSON.stringify(res)}`);
                         expect(res).to.have.status(200);
                         expect(res).to.have.property("text");
                         let body = JSON.parse(res.text);
@@ -34,7 +33,6 @@ describe('Pokemon API', () => {
             return chai.request(app)
                     .get("/pokemon/magikarp")
                     .then(function (res) {
-                        console.log(`res = ${JSON.stringify(res)}`);
                         expect(res).to.have.status(200);
                         expect(res).to.have.property("text");
                         let body = JSON.parse(res.text);
@@ -50,7 +48,6 @@ describe('Pokemon API', () => {
             return chai.request(app)
                     .get("/pokemon/-5")
                     .then(function (res) {
-                        console.log(`res = ${JSON.stringify(res)}`);
                         expect(res).to.have.status(404);
                         expect(res).to.have.property("text");
                         let body = JSON.parse(res.text);

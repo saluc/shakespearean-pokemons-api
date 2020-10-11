@@ -44,7 +44,12 @@ curl --location --request GET 'http://0.0.0.0:49160/pokemon/pikachu'
 ```
 
 ### Test
-The repository includes some tests. If you installed Node.js you can run them using:
+The repository includes some tests. In order to tun the tests you have to to install Node.js and NPM. Additionally you need to install Mocha:
+```
+npm install mocha
+```
+
+Once you correctly installed the prerequisites you can run the tests with the following command:
 ```
 npm test
 ```
